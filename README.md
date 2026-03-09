@@ -158,17 +158,17 @@ Clients connect with their own Bearer token — the server extracts the token fr
 
 ### URL Shortening Tools
 
-| Tool                    | Description                              |
-| ----------------------- | ---------------------------------------- |
-| `shorturl_create`       | Shorten a single URL                     |
-| `shorturl_batch_create` | Shorten multiple URLs at once (max 10)   |
+| Tool                    | Description                            |
+| ----------------------- | -------------------------------------- |
+| `shorturl_create`       | Shorten a single URL                   |
+| `shorturl_batch_create` | Shorten multiple URLs at once (max 10) |
 
 ### Information Tools
 
-| Tool                       | Description                    |
-| -------------------------- | ------------------------------ |
-| `shorturl_get_usage_guide` | Get comprehensive usage guide  |
-| `shorturl_get_api_info`    | Get API details and error codes|
+| Tool                       | Description                     |
+| -------------------------- | ------------------------------- |
+| `shorturl_get_usage_guide` | Get comprehensive usage guide   |
+| `shorturl_get_api_info`    | Get API details and error codes |
 
 ## Usage Examples
 
