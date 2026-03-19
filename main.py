@@ -153,7 +153,7 @@ Environment Variables:
                 async def __call__(self, scope, receive, send):  # type: ignore[no-untyped-def]
                     if scope["type"] == "http":
                         path = scope.get("path", "")
-                        if path == "/health":
+                        if path == "/health" or path.startswith("/.well-known/"):
                             await self.app(scope, receive, send)
                             return
                         headers = dict(scope.get("headers", []))
@@ -172,6 +172,26 @@ Environment Variables:
             async def health(_request: Request) -> JSONResponse:
                 return JSONResponse({"status": "ok"})
 
+            async def server_card(_request: Request) -> JSONResponse:
+                """MCP Server Card for Smithery and other registries."""
+                return JSONResponse({
+                    "serverInfo": {"name": "MCP ShortURL"},
+                    "authentication": {"required": True, "schemes": ["bearer"]},
+                    "tools": [
+                    {"name": "shorturl_create", "description": "Create a short URL"},
+                    {"name": "shorturl_batch_create", "description": "Create multiple short URLs"},
+                    {"name": "shorturl_get_usage_guide", "description": "Get API usage guide"},
+                    {"name": "shorturl_get_api_info", "description": "Get API information"}
+                    ],
+                    "prompts": [
+                    {"name": "shorturl_guide", "description": "URL shortening guide"},
+                    {"name": "shorturl_workflow_examples", "description": "Example workflows"},
+                    {"name": "shorturl_best_practices", "description": "Best practices"}
+                    ],
+                    "resources": [],
+                })
+
+
             @contextlib.asynccontextmanager
             async def lifespan(_app: Starlette):  # type: ignore[no-untyped-def]
                 async with mcp.session_manager.run():
@@ -184,6 +204,7 @@ Environment Variables:
             app = Starlette(
                 routes=[
                     Route("/health", health),
+                    Route("/.well-known/mcp/server-card.json", server_card),
                     Mount("/", app=mcp.streamable_http_app()),
                 ],
                 lifespan=lifespan,
