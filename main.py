@@ -174,23 +174,33 @@ Environment Variables:
 
             async def server_card(_request: Request) -> JSONResponse:
                 """MCP Server Card for Smithery and other registries."""
-                return JSONResponse({
-                    "serverInfo": {"name": "MCP ShortURL"},
-                    "authentication": {"required": True, "schemes": ["bearer"]},
-                    "tools": [
-                    {"name": "shorturl_create", "description": "Create a short URL"},
-                    {"name": "shorturl_batch_create", "description": "Create multiple short URLs"},
-                    {"name": "shorturl_get_usage_guide", "description": "Get API usage guide"},
-                    {"name": "shorturl_get_api_info", "description": "Get API information"}
-                    ],
-                    "prompts": [
-                    {"name": "shorturl_guide", "description": "URL shortening guide"},
-                    {"name": "shorturl_workflow_examples", "description": "Example workflows"},
-                    {"name": "shorturl_best_practices", "description": "Best practices"}
-                    ],
-                    "resources": [],
-                })
-
+                return JSONResponse(
+                    {
+                        "serverInfo": {"name": "MCP ShortURL"},
+                        "authentication": {"required": True, "schemes": ["bearer"]},
+                        "tools": [
+                            {"name": "shorturl_create", "description": "Create a short URL"},
+                            {
+                                "name": "shorturl_batch_create",
+                                "description": "Create multiple short URLs",
+                            },
+                            {
+                                "name": "shorturl_get_usage_guide",
+                                "description": "Get API usage guide",
+                            },
+                            {"name": "shorturl_get_api_info", "description": "Get API information"},
+                        ],
+                        "prompts": [
+                            {"name": "shorturl_guide", "description": "URL shortening guide"},
+                            {
+                                "name": "shorturl_workflow_examples",
+                                "description": "Example workflows",
+                            },
+                            {"name": "shorturl_best_practices", "description": "Best practices"},
+                        ],
+                        "resources": [],
+                    }
+                )
 
             @contextlib.asynccontextmanager
             async def lifespan(_app: Starlette):  # type: ignore[no-untyped-def]
