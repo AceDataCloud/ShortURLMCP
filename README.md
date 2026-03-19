@@ -1,6 +1,6 @@
 # MCP ShortURL
 
-<!-- mcp-name: io.github.acedatacloud/mcp-shorturl -->
+<!-- mcp-name: io.github.AceDataCloud/mcp-shorturl -->
 
 [![PyPI version](https://img.shields.io/pypi/v/mcp-shorturl.svg)](https://pypi.org/project/mcp-shorturl/)
 [![PyPI downloads](https://img.shields.io/pypi/dm/mcp-shorturl.svg)](https://pypi.org/project/mcp-shorturl/)
