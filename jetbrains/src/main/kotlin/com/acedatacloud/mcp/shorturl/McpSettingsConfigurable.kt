@@ -88,7 +88,7 @@ class McpSettingsConfigurable : Configurable {
                     browserLink("API Documentation", "https://docs.acedata.cloud")
                 }
                 row {
-                    browserLink("Source Code", "https://github.com/AceDataCloud/MCPShortURL")
+                    browserLink("Source Code", "https://github.com/AceDataCloud/ShortURLMCP")
                 }
                 row {
                     browserLink("PyPI Package", "https://pypi.org/project/mcp-shorturl/")
