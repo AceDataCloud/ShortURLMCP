@@ -23,13 +23,13 @@
     "url shortener",
     "short link"
   ],
-  "homepage": "https://github.com/AceDataCloud/MCPShortURL",
+  "homepage": "https://github.com/AceDataCloud/ShortURLMCP",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AceDataCloud/MCPShortURL"
+    "url": "https://github.com/AceDataCloud/ShortURLMCP"
   },
   "bugs": {
-    "url": "https://github.com/AceDataCloud/MCPShortURL/issues"
+    "url": "https://github.com/AceDataCloud/ShortURLMCP/issues"
   },
   "contributes": {
     "mcpServers": {
