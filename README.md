@@ -451,7 +451,7 @@ twine upload dist/*
 ## Project Structure
 
 ```
-MCPShortURL/
+ShortURLMCP/
 ├── core/                   # Core modules
 │   ├── __init__.py
 │   ├── client.py          # HTTP client for ShortURL API
